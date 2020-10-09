@@ -6,6 +6,7 @@ import com.bah.msd.domain.Customer;
 
 public interface CustomersRepository extends CrudRepository<Customer, Long> {
 
-	Customer existsByName(String name);
+	boolean existsByName(String name);
+	boolean existsByEmail(String email);
 
 }
