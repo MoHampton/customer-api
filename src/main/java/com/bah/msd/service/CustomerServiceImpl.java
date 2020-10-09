@@ -18,5 +18,11 @@ public class CustomerServiceImpl implements CustomerService {
 	public Optional<Customer> findCustomerById(long id) {
 		return repo.findById(id);
 	}
+	
+	@Override
+	public Optional<Customer> findByName(String name) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 }

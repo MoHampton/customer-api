@@ -9,4 +9,6 @@ public interface CustomerService {
 	public Iterable<Customer> findAllCustomers();
 
 	public Optional<Customer> findCustomerById(long id);
+	
+	public Optional<Customer> findByName(String name);
 }

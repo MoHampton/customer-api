@@ -21,7 +21,7 @@ import com.bah.msd.domain.Customer;
 import com.bah.msd.repository.CustomersRepository;
 
 @RestController
-@RequestMapping("/customers")
+@RequestMapping("/api/customers")
 public class CustomerApi {
 	@Autowired
 	CustomersRepository repo;
@@ -31,9 +31,14 @@ public class CustomerApi {
 		return repo.findAll();
 	}
 
-	@GetMapping("/{customerId}")
+	@GetMapping("/id/{customerId}")
 	public Optional<Customer> getCustomerById(@PathVariable("customerId") long id) {
 		return repo.findById(id);
+	}
+	
+	@GetMapping("/byname/{name}")
+	public Optional<Customer> getCustomerByName(@PathVariable("name") String name) {
+		return repo.findByName(name);
 	}
 
 	@PostMapping
@@ -60,8 +65,13 @@ public class CustomerApi {
 
 	@DeleteMapping("/{customerId}")
 	public ResponseEntity<?> deleteCustomerById(@PathVariable("customerId") long id) {
-		// repo.delete(id);
 		repo.deleteById(id);
+		return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+	}
+	
+	@DeleteMapping("/byname/{name}")
+	public ResponseEntity<?> deleteCustomerByName(@PathVariable("customerName") String name) {
+		repo.deleteByName(name);
 		return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
 	}
 
