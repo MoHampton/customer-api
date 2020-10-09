@@ -8,18 +8,18 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="CUSTOMERS")
+@Table(name = "CUSTOMERS")
 public class Customer {
-	
+
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	long id;
-	
-	@Column(name="CUSTOMER_NAME")
+
+	@Column(name = "NAME")
 	String name;
-	
+
 	String password;
-	
+
 	String email;
 
 	public long getId() {
@@ -52,5 +52,5 @@ public class Customer {
 
 	public void setEmail(String email) {
 		this.email = email;
-	}	
+	}
 }

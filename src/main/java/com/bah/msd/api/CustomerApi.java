@@ -18,13 +18,13 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import com.bah.msd.domain.Customer;
-import com.bah.msd.repository.CustomersRepo;
+import com.bah.msd.repository.CustomersRepository;
 
 @RestController
 @RequestMapping("/customers")
 public class CustomerApi {
 	@Autowired
-	CustomersRepo repo;
+	CustomersRepository repo;
 
 	@GetMapping
 	public Iterable<Customer> getAll() {
@@ -33,14 +33,12 @@ public class CustomerApi {
 
 	@GetMapping("/{customerId}")
 	public Optional<Customer> getCustomerById(@PathVariable("customerId") long id) {
-		//return repo.findOne(id);
 		return repo.findById(id);
 	}
-	
+
 	@PostMapping
 	public ResponseEntity<?> addCustomer(@RequestBody Customer newCustomer, UriComponentsBuilder uri) {
 		if (newCustomer.getId() != 0 || newCustomer.getName() == null || newCustomer.getEmail() == null) {
-			// Reject we'll assign the customer id
 			return ResponseEntity.badRequest().build();
 		}
 		newCustomer = repo.save(newCustomer);
@@ -49,25 +47,22 @@ public class CustomerApi {
 		ResponseEntity<?> response = ResponseEntity.created(location).build();
 		return response;
 	}
-	
+
 	@PutMapping("/{customerId}")
-	public ResponseEntity<?> putCustomer(
-			@RequestBody Customer newCustomer,
-			@PathVariable("customerId") long customerId) 
-	{
+	public ResponseEntity<?> putCustomer(@RequestBody Customer newCustomer,
+			@PathVariable("customerId") long customerId) {
 		if (newCustomer.getId() != customerId || newCustomer.getName() == null || newCustomer.getEmail() == null) {
 			return ResponseEntity.badRequest().build();
 		}
 		newCustomer = repo.save(newCustomer);
 		return ResponseEntity.ok().build();
-	}	
-	
+	}
+
 	@DeleteMapping("/{customerId}")
 	public ResponseEntity<?> deleteCustomerById(@PathVariable("customerId") long id) {
 		// repo.delete(id);
 		repo.deleteById(id);
 		return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
-	}	
-	
-	
+	}
+
 }

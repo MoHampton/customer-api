@@ -4,6 +4,8 @@ import org.springframework.data.repository.CrudRepository;
 
 import com.bah.msd.domain.Customer;
 
-public interface CustomersRepo extends CrudRepository<Customer, Long> {
+public interface CustomersRepository extends CrudRepository<Customer, Long> {
+
+	Customer existsByName(String name);
 
 }
