@@ -36,6 +36,7 @@ public class CustomerApi {
 		return repo.findById(id);
 	}
 	
+	//TODO: Research if @PostMapping should be used instead
 	@GetMapping("/byname/{name}")
 	public Optional<Customer> getCustomerByName(@PathVariable("name") String name) {
 		return repo.findByName(name);
