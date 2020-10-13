@@ -22,7 +22,7 @@ import com.bah.msd.repository.CustomersRepository;
 
 @RestController
 @RequestMapping("/api/customers")
-public class CustomerApi {
+public class CustomerAPI {
 	@Autowired
 	CustomersRepository repo;
 
@@ -31,7 +31,7 @@ public class CustomerApi {
 		return repo.findAll();
 	}
 
-	@GetMapping("/id/{customerId}")
+	@GetMapping("/{customerId}")
 	public Optional<Customer> getCustomerById(@PathVariable("customerId") long id) {
 		return repo.findById(id);
 	}

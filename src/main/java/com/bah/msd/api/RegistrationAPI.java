@@ -21,7 +21,7 @@ import com.bah.msd.domain.Registration;
 import com.bah.msd.repository.RegistrationRepository;
 
 @RestController
-@RequestMapping("/registrations")
+@RequestMapping("/api/registrations")
 public class RegistrationAPI {
 
 	@Autowired

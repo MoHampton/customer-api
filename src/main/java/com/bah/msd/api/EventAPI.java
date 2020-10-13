@@ -21,7 +21,7 @@ import com.bah.msd.domain.Event;
 import com.bah.msd.repository.EventRepository;
 
 @RestController
-@RequestMapping("/events")
+@RequestMapping("/api/events")
 public class EventAPI {
 	@Autowired
 	EventRepository repo;
