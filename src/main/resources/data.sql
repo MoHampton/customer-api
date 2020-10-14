@@ -1,8 +1,8 @@
 
 
-INSERT INTO CUSTOMERS (id, name, email, password) VALUES (1, 'Michael Scott', 'mscott@dundermifflin.com', 'Bo$$');
-INSERT INTO CUSTOMERS (id, name, email, password) VALUES (2, 'Pam Beesley', 'pbeesley@dundermifflin.com', 'P@mP@m');
-INSERT INTO CUSTOMERS (id, name, email, password) VALUES (3, 'Jim Halpert', 'jhalpert@dundermifflin.com', 'ILoveP@m');
+INSERT INTO CUSTOMERS (id, name, email, password) VALUES (1, 'Michael', 'mscott@dundermifflin.com', 'Bo$$');
+INSERT INTO CUSTOMERS (id, name, email, password) VALUES (2, 'Pam', 'pbeesley@dundermifflin.com', 'P@mP@m');
+INSERT INTO CUSTOMERS (id, name, email, password) VALUES (3, 'Jim', 'jhalpert@dundermifflin.com', 'ILoveP@m');
 
 
 
