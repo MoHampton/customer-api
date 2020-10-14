@@ -1,0 +1,177 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Event-App Data-service",
+		"_postman_id": "8fa2a686-7ce9-1c4a-51db-9d8e51f07c34",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Customers",
+			"request": {
+				"url": "http://localhost:8080/api/customers",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get Customer By Id",
+			"request": {
+				"url": "http://localhost:8080/api/customers/1",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get Customer By Name",
+			"request": {
+				"url": "http://localhost:8080/api/customers/byname/Pam Beesley",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get Registrations",
+			"request": {
+				"url": "http://localhost:8080/api/registrations",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Post New Customer",
+			"request": {
+				"url": "http://localhost:8080/api/customers",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\n        \"name\": \"Kelly Kapoor\",\n        \"password\": \"Ry@nAllDay\",\n        \"email\": \"kkapoor@dundermifflin.com\"\n    }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Put/Update Customer",
+			"request": {
+				"url": "http://localhost:8080/api/customers/3",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\n        \"id\": 3,\n        \"name\": \"Kelly Kapoor\",\n        \"password\": \"Ry@n$World\",\n        \"email\": \"kkapoor@dundermifflin.com\"\n    }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get Registration By Id",
+			"request": {
+				"url": "http://localhost:8080/api/registrations/2",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Post New Registration",
+			"request": {
+				"url": "http://localhost:8080/api/registrations",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\n        \"event_id\": \"1\",\n        \"customer_id\": \"2\",\n        \"registration_date\": \"2020-01-13T05:00:00.000+00:00\",\n        \"notes\": \"Office Happy Hour Event\"\n    }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Put/Update Registration",
+			"request": {
+				"url": "http://localhost:8080/api/registrations/2",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\n        \"id\": 2,\n        \"event_id\": \"1\",\n        \"customer_id\": \"2\",\n        \"registration_date\": \"2020-01-17T05:00:00.000+00:00\",\n        \"notes\": \"looking for info on local hotels\"\n    }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Registration",
+			"request": {
+				"url": "http://localhost:8080/api/registrations/2",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\n        \"id\": 2,\n        \"event_id\": \"1\",\n        \"customer_id\": \"2\",\n        \"registration_date\": \"2020-01-17T05:00:00.000+00:00\",\n        \"notes\": \"looking for info on local hotels\"\n    }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Customer",
+			"request": {
+				"url": "http://localhost:8080/api/customers/1",
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
