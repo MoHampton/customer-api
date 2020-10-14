@@ -38,8 +38,15 @@ public class CustomerAPI {
 	
 	//TODO: Research if @PostMapping should be used instead
 	@GetMapping("/byname/{name}")
-	public Optional<Customer> getCustomerByName(@PathVariable("name") String name) {
-		return repo.findByName(name);
+	public ResponseEntity<?> getCustomerByName(@PathVariable("name") String name) {
+		System.out.println("getCustomerByName(): " + name);
+		Optional<Customer> result = repo.findByName(name);
+		if ( result.isPresent() ) {
+			return ResponseEntity.ok(result.get());
+		}
+		else {
+			return ResponseEntity.badRequest().build();
+		}
 	}
 
 	@PostMapping
