@@ -55,7 +55,10 @@ public class EventAPI {
 			@RequestBody Event newEvent,
 			@PathVariable("eventId") long eventId) 
 	{
-		if (newEvent.getId() != eventId || newEvent.getCode() == null || newEvent.getTitle() == null || newEvent.getDescription() == null) {
+		if (newEvent.getId() != eventId
+				|| newEvent.getCode() == null
+				|| newEvent.getTitle() == null
+				|| newEvent.getDescription() == null) {
 			return ResponseEntity.badRequest().build();
 		}
 		newEvent = repo.save(newEvent);
