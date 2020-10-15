@@ -9,13 +9,13 @@ import com.bah.msd.repository.CustomersRepository;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@SpringBootTest
-class CustomersRepoTests {
+/*@SpringBootTest
+class CustomersRepoTests {*/
 
-	@Autowired
-	private CustomersRepository repo;
+	/*@Autowired
+	private CustomersRepository repo;*/
 
-	@Test
+	/*@Test
 	void test_addNewCustomer() {
 
 		System.out.println("repository count: " + repo.count());
@@ -39,6 +39,5 @@ class CustomersRepoTests {
 		System.out.println("repository count: " + repo.count());
 		assertThat(repo.count()).isEqualTo(2);
 
-	}
+	}*/
 
-}
